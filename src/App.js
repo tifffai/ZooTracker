@@ -1,28 +1,53 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import Mammals from './Mammals'
+import Dinosaurs from './Dinosaurs';
+
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      totalClicks: 0
+    }
+  }
+
+  updateTotalnimals(operator) {
+    const currentTotal = this.state.totalClicks;
+    if (operator === 'add') {
+      this.setState({ totalClicks: currentTotal + 1 });
+    } else {
+      this.setState({ totalClicks: currentTotal - 1 });
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div class="title-box">
+          <h1>React Zoo</h1>  
+          <h2>Welcome to React Zoo</h2>
+          <h4>CURRENT TOTAL ZOO RESIDENTS: {this.state.totalClicks}</h4>
+        </div>
+
+        <br></br>
+        <br></br>
+        <br></br>
+        <Mammals updateAnimals={this.updateTotalnimals.bind(this)}/>
+        <br></br>
+        <br></br>
+        <br></br>
+        <Dinosaurs updateAnimals={this.updateTotalnimals.bind(this)}/>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
     );
   }
 }
+
+
+
 
 export default App;
