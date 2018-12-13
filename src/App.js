@@ -34,14 +34,17 @@ class App extends Component {
         <br></br>
         <br></br>
         <br></br>
-        <Mammals updateAnimals={this.updateTotalnimals.bind(this)}/>
-        <br></br>
-        <br></br>
-        <br></br>
-        <Dinosaurs updateAnimals={this.updateTotalnimals.bind(this)}/>
-        <br></br>
-        <br></br>
-        <br></br>
+
+        <div class="animals-box">
+          <Mammals updateAnimals={this.updateTotalnimals.bind(this)}/>
+          <br></br>
+          <br></br>
+          <br></br>
+          <Dinosaurs updateAnimals={this.updateTotalnimals.bind(this)}/>
+          <br></br>
+          <br></br>
+          <br></br>
+        </div>
       </div>
     );
   }
